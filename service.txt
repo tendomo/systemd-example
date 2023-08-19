@@ -1,0 +1,17 @@
+[Unit]
+Description= A SERVICE TO START MY noejs APP
+
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/alliance
+ExecStart=/bin/npm run start:dev
+Restart=on-failure
+RestartSec=3
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=alliance
+
+[Install]
+WantedBy=multi-user.target
